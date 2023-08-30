@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border: 2px solid var(--main-color);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.container:last-child {
+  margin-bottom: 0;
+}
+
+.content {
+  padding-right: 10px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.description {
+  font-size: 25px;
+}
+
+.btnsWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn:nth-child(1) {
+  margin-bottom: 10px;
+}

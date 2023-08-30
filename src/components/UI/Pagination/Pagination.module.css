@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.page {
+  border: 1px solid var(--main-color);
+  border-radius: 3px;
+  padding: 10px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.page.active {
+  background-color: var(--main-color);
+  transform: translateY(-1px);
+  color: #fff;
+}
+
+.page:hover {
+  transform: translateY(-1px);
+}
+
+.page:last-child {
+  margin-right: 0;
+}

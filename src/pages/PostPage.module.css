@@ -1,0 +1,9 @@
+.wrapper {
+  height: 100%;
+  overflow: auto;
+}
+
+.back {
+  align-self: flex-start;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,11 @@
+.container {
+  padding: 20px;
+}
+
+.item {
+  margin-bottom: 5px;
+}
+
+.item:last-child {
+  margin-bottom: 0;
+}
