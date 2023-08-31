@@ -1,0 +1,6 @@
+const loginData = {
+  login: '123',
+  password: '123',
+};
+
+export default loginData;

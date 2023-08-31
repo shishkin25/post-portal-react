@@ -1,5 +1,7 @@
+import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Navbar.module.css';
+import AuthContext from '../../../context/AuthContext';
 
 const navItems = [
   { name: 'About', to: '.' },
@@ -13,6 +15,13 @@ const addStylesIfActive = ({ isActive }) => {
 };
 
 const Navbar = () => {
+  const { setIsAuth } = useContext(AuthContext);
+
+  const exitHandler = () => {
+    setIsAuth(false);
+    localStorage.setItem('isAuth', JSON.stringify(false));
+  };
+
   return (
     <nav className={styles.container}>
       <ul className={styles.list}>
@@ -24,6 +33,9 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
+      <div onClick={exitHandler} className={styles.exit}>
+        Выйти
+      </div>
     </nav>
   );
 };

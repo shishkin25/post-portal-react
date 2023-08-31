@@ -1,6 +1,7 @@
 .container {
   background-color: #708090;
   padding: 15px 0;
+  position: relative;
 }
 
 .list {
@@ -23,4 +24,18 @@
 .item a.active {
   color: #fff;
   text-decoration: underline;
+}
+
+.exit {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 25px;
+  text-decoration: underline;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.exit:hover {
+  color: #fff;
 }

@@ -1,21 +1,20 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { useState } from 'react';
 import './styles/App.css';
-import PostsPage from './pages/PostsPage';
-import MainLayout from './layouts/MainLayout';
-import AboutPage from './pages/AboutPage';
-import PostPage from './pages/PostPage';
+import AppRouter from './components/AppRouter/AppRouter';
+import AuthContext from './context/AuthContext';
 
 function App() {
+  const [isAuth, setIsAuth] = useState(() =>
+    JSON.parse(localStorage.getItem('isAuth'))
+  );
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<MainLayout />}>
-          <Route index element={<AboutPage />} />
-          <Route path="posts" element={<PostsPage />} />
-          <Route path="posts/:id" element={<PostPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <AuthContext.Provider value={{ isAuth, setIsAuth }}>
+      <BrowserRouter>
+        <AppRouter />
+      </BrowserRouter>
+    </AuthContext.Provider>
   );
 }
 
